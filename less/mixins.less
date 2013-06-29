@@ -1,0 +1,11 @@
+.sequential-percentage-width(@amount,@before){
+	.sequential-percentage-width(@amount,@before,@amount)
+}
+
+.sequential-percentage-width(@index,@before,@ttlAmount) when (@index > 0) {
+    .@{before}-@{index} { 
+        width: percentage(@index / @ttlAmount);
+    }
+    .sequential-percentage-width(@index - 1,@before,@ttlAmount);
+}
+.sequential-percentage-width(0,''){}
