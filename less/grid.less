@@ -2,22 +2,7 @@
  * Default grid layout 
  */
 .row {
-	position: relative;
-	max-width: @row-max-desktop;
-	margin-right: auto;
-	margin-left: auto;
-	.clearfix;
-
-	&.greedy {
-		max-width:none;
-	}
-
-	.row {
-		max-width: none;
-		margin-right: -(@grid-gutter-desktop / 2);
-		margin-left: -(@grid-gutter-desktop / 2);
-	}
-
+	.make-row();
 }
 
 .col-1,.col-pt-1,.col-t-1,.col-d-1,
@@ -32,13 +17,7 @@
 .col-10,.col-pt-10,.col-t-10,.col-d-10,
 .col-11,.col-pt-11,.col-t-11,.col-d-11,
 .col-12,.col-pt-12,.col-t-12,.col-d-12 {
-	position: relative;
-	display:block;
-	float:left;
-	min-height: 1px;
-	padding-right: (@grid-gutter-phone / 2);
-	padding-left: (@grid-gutter-phone / 2);
-	box-sizing: border-box;
+	.make-row-content();
 }
 
 .sequential-percentage-width(@grid-columns,col);
@@ -54,17 +33,12 @@
 //End of tablet layout
 
 @media (min-width: @screen-desktop-lower){
-	.row {
-		max-width: @row-max-desktop;
-	}
 	.sequential-percentage-width(@grid-columns,col-d);
 }
 //End of desktop layout
 
 @media (min-width: @screen-large-lower){
 	.row {
-		max-width: @row-max-large;
-
 		.row {
 			margin-right: -(@grid-gutter-large / 2);
 			margin-left: -(@grid-gutter-large / 2);

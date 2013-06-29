@@ -1,3 +1,35 @@
+.make-row() {
+	position: relative;
+	max-width: @row-max-desktop;
+	margin-right: auto;
+	margin-left: auto;
+	.clearfix;
+
+	&.greedy {
+		max-width:none;
+	}
+
+	.row {
+		max-width: none;
+		margin-right: -(@grid-gutter-desktop / 2);
+		margin-left: -(@grid-gutter-desktop / 2);
+	}
+
+	@media (min-width: @screen-large-lower){
+		max-width: @row-max-large;
+	}
+}
+
+.make-row-content() {
+	position: relative;
+	display:block;
+	float:left;
+	min-height: 1px;
+	padding-right: (@grid-gutter-phone / 2);
+	padding-left: (@grid-gutter-phone / 2);
+	box-sizing: border-box;
+}
+
 .sequential-percentage-width(@amount,@before){
 	.sequential-percentage-width(@amount,@before,@amount)
 }
