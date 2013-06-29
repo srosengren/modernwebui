@@ -1,4 +1,6 @@
-/* Default grid layout */
+/* 
+ * Default grid layout 
+ */
 .row {
 	position: relative;
 	max-width: @row-max-desktop;
@@ -12,31 +14,77 @@
 
 	.row {
 		max-width: none;
-		margin-right: -@grid-gutter-desktop / 2;
-		margin-left: -@grid-gutter-desktop / 2;
+		margin-right: -(@grid-gutter-desktop / 2);
+		margin-left: -(@grid-gutter-desktop / 2);
 	}
 
 }
 
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12 {
+.col-1,.col-pt-1,.col-t-1,.col-d-1,
+.col-2,.col-pt-2,.col-t-2,.col-d-2,
+.col-3,.col-pt-3,.col-t-3,.col-d-3,
+.col-4,.col-pt-4,.col-t-4,.col-d-4,
+.col-5,.col-pt-5,.col-t-5,.col-d-5,
+.col-6,.col-pt-6,.col-t-6,.col-d-6,
+.col-7,.col-pt-7,.col-t-7,.col-d-7,
+.col-8,.col-pt-8,.col-t-8,.col-d-8,
+.col-9,.col-pt-9,.col-t-9,.col-d-9,
+.col-10,.col-pt-10,.col-t-10,.col-d-10,
+.col-11,.col-pt-11,.col-t-11,.col-d-11,
+.col-12,.col-pt-12,.col-t-12,.col-d-12 {
 	position: relative;
 	display:block;
 	float:left;
 	min-height: 1px;
-	padding-right: @grid-gutter-desktop / 2;
-	padding-left: @grid-gutter-desktop / 2;
+	padding-right: (@grid-gutter-phone / 2);
+	padding-left: (@grid-gutter-phone / 2);
 	box-sizing: border-box;
 }
 
 .sequential-percentage-width(@grid-columns,col);
+
+@media (min-width: @screen-phonetablet-lower){
+	.sequential-percentage-width(@grid-columns,col-pt);	
+}
+//End of phone layout
+
+@media (min-width: @screen-tablet-lower){
+	.sequential-percentage-width(@grid-columns,col-t)
+}
+//End of tablet layout
+
+@media (min-width: @screen-desktop-lower){
+	.row {
+		max-width: @row-max-desktop;
+	}
+	.sequential-percentage-width(@grid-columns,col-d);
+}
+//End of desktop layout
+
+@media (min-width: @screen-large-lower){
+	.row {
+		max-width: @row-max-large;
+
+		.row {
+			margin-right: -(@grid-gutter-large / 2);
+			margin-left: -(@grid-gutter-large / 2);
+		}
+	}
+
+	.col-1,.col-pt-1,.col-t-1,.col-d-1,
+	.col-2,.col-pt-2,.col-t-2,.col-d-2,
+	.col-3,.col-pt-3,.col-t-3,.col-d-3,
+	.col-4,.col-pt-4,.col-t-4,.col-d-4,
+	.col-5,.col-pt-5,.col-t-5,.col-d-5,
+	.col-6,.col-pt-6,.col-t-6,.col-d-6,
+	.col-7,.col-pt-7,.col-t-7,.col-d-7,
+	.col-8,.col-pt-8,.col-t-8,.col-d-8,
+	.col-9,.col-pt-9,.col-t-9,.col-d-9,
+	.col-10,.col-pt-10,.col-t-10,.col-d-10,
+	.col-11,.col-pt-11,.col-t-11,.col-d-11,
+	.col-12,.col-pt-12,.col-t-12,.col-d-12 {
+		padding-right: (@grid-gutter-large / 2);
+		padding-left: (@grid-gutter-large / 2);
+	}
+}
+//End of large layout

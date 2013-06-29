@@ -9,19 +9,18 @@
 //-------------
 
 // breakpoints
-@screen-large: 1200px;
-@screen-desktop: 980px;
-@screen-tablet: 768px;
-@screen-phone: 480px;
+@screen-large-lower: 1200px;
+@screen-desktop-lower: 980px;
+@screen-tablet-lower: 768px;
+@screen-phonetablet-lower: 480px;
 
 @grid-columns: 12;
-
-@row-max-large: @screen-large - @grid-gutter-large;
-@row-max-desktop: @screen-desktop;
-@row-max-tablet: @screen-tablet - @grid-gutter-tablet;
-@row-max-phone: @screen-phone - @grid-gutter-phone;
 
 @grid-gutter-large: 30px;
 @grid-gutter-desktop: 20px;
 @grid-gutter-tablet: 20px;
+@grid-gutter-phonetablet: 20px;
 @grid-gutter-phone: 20px;
+
+@row-max-large: (@screen-large-lower - @grid-gutter-large);
+@row-max-desktop: (@screen-desktop-lower - @grid-gutter-desktop);
