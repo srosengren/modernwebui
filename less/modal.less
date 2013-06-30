@@ -11,7 +11,10 @@
 
 .modal {
 	display: none;
-	position: relative;
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	top: 30%;
 	background-color: white;
 	.clearfix;
 
@@ -25,5 +28,9 @@
 		.make-row-content();
 
 		float:none;
+	}
+
+	.modal-title {
+		color: @color-primary;
 	}
 }

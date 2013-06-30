@@ -1,11 +1,31 @@
-// colors
+//-------------
+// Colors
+//-------------
+
 @color-cyan: #1BA1E2;
+@color-gray-semi-light: #b2b2b2;
+@color-gray-dark: #333333;
 
 @color-primary: @color-cyan;
 
 
 //-------------
-// grid
+// Type
+//-------------
+
+@font-family-light: "Segoe UI semilight",Verdana,Helvetica,Sans-Serif;
+@font-family: "Segoe UI",Verdana,Helvetica,Sans-Serif;
+
+@font-size: 16px;
+@font-size-huge: @font-size * 4;
+
+@font-size-page-title: @font-size-huge;
+
+@line-height-page-title: 1.1em;
+
+
+//-------------
+// Grid
 //-------------
 
 // breakpoints
@@ -24,5 +44,10 @@
 
 @row-max-large: (@screen-large-lower - @grid-gutter-large);
 @row-max-desktop: (@screen-desktop-lower - @grid-gutter-desktop);
+
+
+//-------------
+// Modal
+//-------------
 
 @zindex-modal-base: 10;
