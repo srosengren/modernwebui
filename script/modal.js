@@ -10,7 +10,7 @@ var modern = (function($, modernModule){
 
 	modernModule.modal = {
 		show: function($this){
-			$this.addClass('showing').before('<div class="modal-backdrop"></div>').prev('.modal-backdrop').on('click',function(){
+			$this.addClass('showing').before('<div class="modal-backdrop"></div>').filter(':not(.modal-action-required)').prev('.modal-backdrop').on('click',function(){
 				$this.modern('modal','hide');
 			});
 		},
