@@ -3,6 +3,8 @@
 //-------------
 
 @color-cyan: #1BA1E2;
+@color-red: #E51400;
+@color-green: #008A00;
 @color-gray-semi-light: #b2b2b2;
 @color-gray-dark: #333333;
 
@@ -59,7 +61,16 @@
 // Buttons
 //-------------
 
-@btn-padding-horizontal: 6px;
-@btn-padding-vertical: 3px;
+@btn-padding-horizontal: 8px;
+@btn-padding-vertical: 5px;
 @btn-margin-horizontal: 6px;
 @btn-margin-vertical: 3px;
+
+@btn-bg: @color-gray-semi-light;
+@btn-secondary-bg: darken(@btn-bg,15);
+@btn-primary-bg: @color-primary;
+@btn-primary-secondary-bg: darken(@btn-primary-bg,15);
+@btn-danger-bg: @color-red;
+@btn-danger-secondary-bg: darken(@btn-danger-bg,15);
+@btn-success-bg: @color-green;
+@btn-success-secondary-bg: darken(@btn-success-bg,15);

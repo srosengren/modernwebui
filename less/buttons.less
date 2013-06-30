@@ -1,10 +1,31 @@
-.btn {
+
+//Base style
+.btn,
+.btn-primary,
+.btn-danger,
+.btn-success {
 	padding: @btn-padding-vertical @btn-padding-horizontal;
 	margin: @btn-margin-vertical @btn-margin-horizontal;
 	font-size: @font-size;
-	background-color: @color-gray-semi-light;
+	line-height: 1em;
 	display: inline-block;
 	color: white;
 	border: solid 2px transparent;
 	cursor: pointer;
+}
+
+.btn {
+	.make-btn(@btn-bg,@btn-secondary-bg,#fff);
+}
+
+.btn-primary {
+	.make-btn(@btn-primary-bg,@btn-primary-secondary-bg,#fff);
+}
+
+.btn-danger {
+	.make-btn(@btn-danger-bg,@btn-danger-secondary-bg,#fff);
+}
+
+.btn-success {
+	.make-btn(@btn-success-bg,@btn-success-secondary-bg,#fff);
 }
