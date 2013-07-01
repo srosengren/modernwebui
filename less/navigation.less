@@ -1,0 +1,43 @@
+.navigation {
+	.make-row();
+	max-width: (@row-max-default - @grid-gutter-phone);
+	margin-bottom: @layout-flow-vertical;
+
+	.navigation-item {
+		cursor: pointer;
+		display: inline-block;
+		padding-top: @nav-item-padding-vertical;
+		padding-right: @nav-item-horizontal-flow;
+		padding-bottom: @nav-item-padding-vertical;
+		padding-left: 0px;
+		font-size: @font-size;
+		line-height: 1em;
+		color: @color-primary;
+		&:hover {
+			color: @color-primary-darker;
+		}
+	}
+
+	@media (min-width: @screen-large-lower){
+		max-width: (@row-max-large - @grid-gutter-large);
+		.navigation-item {
+
+		}
+	}
+}
+
+.navbar {
+	background-color: @color-primary;
+	margin-bottom: @layout-flow-vertical;
+	.navigation {
+		margin-bottom: 0;
+		.navigation-item {
+			color: white;
+			padding-right: (@nav-item-horizontal-flow / 2);
+			padding-left: (@nav-item-horizontal-flow / 2);
+			&:hover {
+				background-color: @color-primary-darker;
+			}
+		}
+	}
+}

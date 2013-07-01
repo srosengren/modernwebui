@@ -3,12 +3,17 @@
 //-------------
 
 @color-cyan: #1BA1E2;
+@color-cyan-darker: darken(@btn-primary-bg,15);
 @color-red: #E51400;
+@color-red-darker: darken(@btn-danger-bg,15);
 @color-green: #008A00;
+@color-green-darker: darken(@btn-success-bg,15);
 @color-gray-semi-light: #b2b2b2;
+@color-gray: darken(@btn-bg,15);
 @color-gray-dark: #333333;
 
 @color-primary: @color-cyan;
+@color-primary-darker: @color-cyan-darker;
 
 
 //-------------
@@ -29,7 +34,7 @@
 
 
 //-------------
-// Grid
+// Layout
 //-------------
 
 // breakpoints
@@ -38,16 +43,25 @@
 @screen-tablet-lower: 768px;
 @screen-phonetablet-lower: 480px;
 
+@layout-flow-horizontal: 20px;
+@layout-flow-horizontal-large: 30px;
+@layout-flow-vertical: 20px;
+
+
+//-------------
+// Grid
+//-------------
+
 @grid-columns: 12;
 
-@grid-gutter-large: 30px;
-@grid-gutter-desktop: 20px;
-@grid-gutter-tablet: 20px;
-@grid-gutter-phonetablet: 20px;
-@grid-gutter-phone: 20px;
+@grid-gutter-large: @layout-flow-horizontal-large;
+@grid-gutter-desktop: @layout-flow-horizontal;
+@grid-gutter-tablet: @layout-flow-horizontal;
+@grid-gutter-phonetablet: @layout-flow-horizontal;
+@grid-gutter-phone: @layout-flow-horizontal;
 
 @row-max-large: (@screen-large-lower - @grid-gutter-large);
-@row-max-desktop: (@screen-desktop-lower - @grid-gutter-desktop);
+@row-max-default: (@screen-desktop-lower - @grid-gutter-desktop);
 
 
 //-------------
@@ -63,14 +77,22 @@
 
 @btn-padding-horizontal: 8px;
 @btn-padding-vertical: 5px;
+@btn-border-thickness: 2px;
 @btn-margin-horizontal: 6px;
 @btn-margin-vertical: 3px;
 
 @btn-bg: @color-gray-semi-light;
-@btn-secondary-bg: darken(@btn-bg,15);
+@btn-secondary-bg: @color-gray;
 @btn-primary-bg: @color-primary;
-@btn-primary-secondary-bg: darken(@btn-primary-bg,15);
+@btn-primary-secondary-bg: @color-primary-darker;
 @btn-danger-bg: @color-red;
-@btn-danger-secondary-bg: darken(@btn-danger-bg,15);
+@btn-danger-secondary-bg: @color-red-darker;
 @btn-success-bg: @color-green;
-@btn-success-secondary-bg: darken(@btn-success-bg,15);
+@btn-success-secondary-bg: @color-green-darker;
+
+//-------------
+// Navigation
+//-------------
+@nav-item-horizontal-flow: @btn-padding-horizontal * 2;
+@nav-item-padding-vertical: 10px;
+@nav-item-border-thickness: @btn-border-thickness;

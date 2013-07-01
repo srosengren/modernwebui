@@ -5,7 +5,8 @@
 
 .make-row() {
 	position: relative;
-	max-width: @row-max-desktop;
+	max-width: @row-max-default;
+	margin-top: 0px;
 	margin-right: auto;
 	margin-left: auto;
 	.clearfix;
@@ -35,6 +36,7 @@
 	float:left;
 	min-height: 1px;
 	padding-right: (@grid-gutter-phone / 2);
+	padding-bottom: @layout-flow-vertical;
 	padding-left: (@grid-gutter-phone / 2);
 	box-sizing: border-box;
 
