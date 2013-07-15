@@ -17,6 +17,7 @@
 	}
 }
 
+//Overrides for larger displays subnavs are now drop-downs
 @media (min-width: @screen-tablet-lower){
 
 	.navigation__item {
@@ -31,8 +32,10 @@
 		left: 0;
 		display: none;
 		top: @nav-item-computed-height;
-		.navigation-item {
+		.navigation__item {
 			display: block;
+			float:none;
+			white-space: nowrap;
 		}
 	}
 
