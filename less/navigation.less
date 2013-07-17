@@ -5,15 +5,48 @@
 .navigation__item {
 	.make-row-content();
 	float: none;
+	position: static;
 
 	cursor: pointer;
 	line-height: 1em;
 	color: @color-primary;
 	padding-top: @nav-item-padding-vertical;
 	padding-bottom: @nav-item-padding-vertical;
+	max-height: @nav-item-computed-height;
 
 	&:hover {
 		color: @color-primary-darker;
+	}
+}
+
+.navigation__item--subnav--open {
+	max-height: @nav-item-computed-height * 10;
+	transition: max-height 0.2s ease;
+	overflow: hidden;
+
+	> .navigation--subnav {
+		left: 0%;
+		right: 0%;
+	}
+}
+
+.navigation--subnav {
+	position: absolute;
+	left: 100%;
+	right: -100%;
+	top: 0px;
+	transition: all 0.2s ease;
+	background-color: @color-bg-primary;
+	padding-top: @nav-item-computed-height;
+
+	&:before {
+		content: " ";
+		position: absolute;
+		border-top: solid 6px transparent;
+		border-right: solid 6px @color-primary;
+		border-bottom: solid 6px transparent;
+		top: (@nav-item-computed-height / 2 - 3);
+		left: (@layout-flow-horizontal / 2);
 	}
 }
 
