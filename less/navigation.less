@@ -1,5 +1,22 @@
 .navigation {
 	.make-row();
+	overflow: hidden;
+	z-index: 1;
+	max-height: 0px;
+	padding-bottom: @layout-flow-vertical;
+
+	&:after {
+		position: absolute;
+		padding-right: (@layout-flow-horizontal / 2);
+		bottom: 0px;
+		content: "\2026";
+		color: @color-primary;
+		text-align: right;
+		font-size: @font-size-large;
+		width: 100%;
+		box-sizing:border-box;
+		background-color: @color-navigation-bg;
+	}
 }
 
 .navigation__item {
@@ -19,9 +36,32 @@
 	}
 }
 
+.navigation__item--subnav {
+	&:before {
+		content: " ";
+		border-top: solid 10px transparent;
+		border-bottom: solid 10px transparent;
+		border-left: solid 8px @color-primary;
+		position: absolute;
+		right: (@layout-flow-horizontal / 2);
+		top: 50%;
+		margin-top: ((@nav-item-computed-height - 20) / 2);
+	}
+	&:after {
+		content: " ";
+		border-top: solid 10px transparent;
+		border-bottom: solid 10px transparent;
+		border-left: solid 8px @color-bg-primary;
+		position: absolute;
+		right: (@layout-flow-horizontal / 2) + 3px;
+		top: 50%;
+		margin-top: ((@nav-item-computed-height - 20) / 2);
+	}
+}
+
 .navigation__item--subnav--open {
 	max-height: @nav-item-computed-height * 10;
-	transition: max-height 0.2s ease;
+	transition: max-height 0.4s ease;
 	overflow: hidden;
 
 	> .navigation--subnav {
@@ -35,7 +75,7 @@
 	left: 100%;
 	right: -100%;
 	top: 0px;
-	transition: all 0.2s ease;
+	transition: all 0.4s ease;
 	background-color: @color-bg-primary;
 	padding-top: @nav-item-computed-height;
 
@@ -61,7 +101,6 @@
 		background-color: @color-bg-primary;
 		border: solid 1px #eee;
 		position: absolute;
-		z-index: 1;
 		left: 0;
 		display: none;
 		top: @nav-item-computed-height;
@@ -74,15 +113,6 @@
 
 	.navigation__item--subnav {
 		padding-right: (@layout-flow-horizontal / 2 + 12px);
-		&:after {
-			content: " ";
-			border-top: solid 4px @color-primary;
-			border-left: solid 4px transparent;
-			border-right: solid 4px transparent;
-			position: absolute;
-			right: (@layout-flow-horizontal / 2);
-			top: 50%;
-		}
 	}
 
 	.navigation__item--subnav:hover, .navigation__item--subnav--open {
